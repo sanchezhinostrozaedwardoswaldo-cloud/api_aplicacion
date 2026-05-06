@@ -1,0 +1,28 @@
+# Entorno virtual y dependencias de Python
+venv/
+env/
+ENV/
+bin/
+lib/
+share/
+
+# Archivos de configuración sensible (¡MUY IMPORTANTE!)
+.env
+.env.local
+.env.*
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Archivos de Visual Studio Code
+.vscode/
+
+# Archivos temporales de Ubuntu/Linux
+.DS_Store
+.thumbnails
+.swp
+*~
