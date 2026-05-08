@@ -5,6 +5,7 @@ from sqlalchemy import MetaData
 from config import settings
 
 # Engine async con pool apropiado para Supabase
+# En tu configuración del engine
 engine = create_async_engine(
     settings.DATABASE_URL,
     echo=settings.DEBUG,
@@ -12,6 +13,10 @@ engine = create_async_engine(
     pool_size=10,
     max_overflow=20,
     pool_pre_ping=True,
+    connect_args={
+        "prepared_statement_cache_size": 0,
+        "statement_cache_size": 0
+    }
 )
 
 AsyncSessionLocal = async_sessionmaker(
